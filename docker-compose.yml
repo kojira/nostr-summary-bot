@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  summarize:
+    container_name: summarize
+    build:
+      context: "./"
+      dockerfile: "./Dockerfile"
+    volumes:
+      - "./:/var/bot/"
+    tty: true
+    working_dir: /var/bot/src
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    links:
+      - subscriber
+    command: python summarizer.py
+
+networks:
+  default:
+    name: nostify_default
+    external: true
