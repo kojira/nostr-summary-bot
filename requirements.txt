@@ -8,3 +8,4 @@ pynostr
 openai==0.27.2
 mecab-python3
 pysummarization
+langdetect
