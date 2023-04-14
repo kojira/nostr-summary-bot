@@ -8,7 +8,7 @@ services:
     volumes:
       - "./:/var/bot/"
     tty: true
-    working_dir: /var/bot/src
+    working_dir: /var/bot/
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
