@@ -37,8 +37,8 @@ def wait_db(host="db", port=3306, retries=30):
   return False
 
 
-# host = "db"
-host = "localhost"
+host = "db"
+# host = "localhost"
 
 wait_db(host=host)
 
